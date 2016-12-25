@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>动画船</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style:none
+    }
+    .common{
+        position:absolute;
+    }
+    .bannerBox{
+        height:672px;
+        background:url(images/banner3000BG.png) no-repeat center;
+        position:relative;
+        overflow:hidden;
+    }
+    .boat{
+        width:754px;
+        height:550px;
+        background:url(images/chuan.png);
+        left:45%;
+        margin-left:-360px;
+        bottom:100px;
+        animation:boat 8s infinite;
+    }
+    .boat .badge1Wrap{
+        width:94px;
+        height:94px;
+        top:168px;
+        left:196px;
+        transform:scale(0,0);
+        animation: badgeWrap .5s .3s both cubic-bezier(0,1.58,.5,1.02);
+        /*animation-fill-mode:none/both/forwords/backwards属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式*/
+    }
+    .boat .badge1{
+        width:94px;
+        height:94px;
+        background:url(images/XTB01.png);
+        animation:boat_badge 8s infinite;
+    }
+    .boat .badge1 .txt_banner{
+        width:440px;
+        height:64px;
+        background:url(images/XTBwenzi01.png);
+        left:-440px;
+        top:30px;
+    }
+    .boat .badge2Wrap{
+        width:94px;
+        height:94px;
+        top:152px;
+        left:391px;
+        transform:scale(0,0);
+        animation:badgeWrap .5s .5s both cubic-bezier(0,1.58,.5,1.02);
+    }
+    .boat .badge2{
+        width:94px;
+        height:94px;
+        background:url(images/XTB02.png);
+        animation:boat_badge 8s infinite;
+    }
+    .boat .badge2 .txt_banner{
+        width:254px;
+        height:166px;
+        background:url(images/XTBwenzi02.png);
+        top:-117px;
+        left:95px;
+    }
+    .balloon{
+        width:207px;
+        height:245px;
+        background:url(images/qiqiu.png);
+        left:880px;
+        top:100px;
+        animation:balloon 15s infinite;
+    }
+    .balloon .badgeWrap{
+        width:94px;
+        height:94px;
+        top:50px;
+        left:50px;
+        transform:scale(0,0);
+        animation:badgeWrap .5s .8s both cubic-bezier(0,1.58,.5,1.02);
+    }
+    /*cubic-bezier:贝塞尔曲线*/
+    .balloon .badge{
+        width:94px;
+        height:94px;
+        background:url(images/XTB03.png);
+    }
+    .balloon .badge .txt_banner{
+        width:300px;
+        height:40px;
+        background:url(images/XTBwenzi03.png);
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        left:94px;
+        top:30px;
+    }
+    .fish{
+        width:178px;
+        height:98px;
+        background:url(images/yu.png);
+        left:390px;
+        bottom:50px;
+        animation:fish 10s infinite;
+    }
+    .wave1{
+        height:108px;
+        width:140%;
+        background:url(images/lang1.png);
+        left:0;
+        bottom:0;
+        animation:wave1 15s infinite;
+    }
+
+
+    .drift_bottle1{
+        height:89px;
+        width:67px;
+        background:url(images/pingzi2.png);
+        left:300px;
+        bottom:95px;
+        animation:bottle 5s 3s infinite;
+    }
+    .wave2{
+        height:108px;
+        width:140%;
+        background:url(images/lang2.png);
+        left:-200px;
+        bottom:45px;
+        animation:wave2 15s infinite;
+    }
+    .drift_bottle2{
+        width:112px;
+        height:92px;
+        background:url(images/pingzi1.png);
+        right:220px;
+        bottom:45px;
+        animation:bottle 5s infinite;
+    }
+    .wave3{
+        height:108px;
+        width:140%;
+        background:url(images/lang3.png);
+        left:0;
+        bottom:95px;
+        animation:wave3 15s infinite;
+    }
+    @keyframes boat{
+        0%{ transform:rotate(-8deg)}
+        50%{ transform:rotate(8deg)}
+        100%{ transform:rotate(-8deg)}
+    }
+    @keyframes badgeWrap{
+        0%{ transform:scale(0,0);}
+        100%{ transform:scale(1,1);}
+    }
+    @keyframes boat_badge{
+        0%{ transform:rotate(8deg)}
+        50%{ transform:rotate(-8deg)}
+        100%{ transform:rotate(8deg)}
+    }
+    @keyframes balloon{
+        0%{ top:100px}
+        50%{ top:0px}
+        100%{ top:100px}
+    }
+    @keyframes fish{
+        0%{ left:390px;bottom:50px;transform:rotate(-60deg)}
+        25%{ left:690px;bottom:200px;transform:rotate(5deg)}
+        50%{ left:990px;bottom:50px;transform:rotate(10deg)}
+        51%{ left:990px;bottom:50px;transform:rotate(-60deg)}
+        75%{ left:1290px;bottom:200px;transform:rotate(5deg)}
+        99%{ left:1590px;bottom:50px;transform:rotate(10deg)}
+        100%{ left:390px;}
+    }
+    @keyframes wave1{
+        0%{ transform:translateX(-300px)}
+        50%{ transform:translateX(0)}
+        100%{ transform:translateX(-300px)}
+    }
+    @keyframes wave2{
+        0%{ left:-100px}
+        50%{ left:-200px}
+        100%{ left:-100px}
+    }
+    @keyframes wave3{
+        0%{ left:-100px}
+        50%{ left:0px}
+        100%{ left:-100px}
+    }
+    @keyframes bottle{
+        0%{ transform:rotate(15deg) translateX(50px)}
+        50%{ transform:rotate(-15deg) translateX(0px)}
+        100%{ transform:rotate(15deg) translateX(50px)}
+    }
+</style>
+</head>
+
+<body>
+<div id="bannerBox" class="bannerBox">
+	<div class="common balloon">
+    	<div class="common badgeWrap">
+            <div class="badge">
+                <div class="common txt_banner"></div>
+            </div>
+        </div>
+    </div>
+    <div class="common boat">
+    	<div class="common badge1Wrap">
+            <div class="common badge1">
+                <div class="common txt_banner"></div>
+            </div>
+        </div>
+        <div class="common badge2Wrap">
+        <div class="badge2">
+            <div class="common txt_banner"></div>
+        </div>
+        </div>
+    </div>
+    <div class="common fish"></div>
+	<div class="common wave3"></div>
+    <div class="common drift_bottle1"></div>
+    <div class="common wave2"></div>
+    <div class="common drift_bottle2"></div>
+    <div class="common wave1"></div>
+</div>
+</body>
+</html>
